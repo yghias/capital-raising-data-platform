@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: raw
+    database: CAPITAL_MARKETS
+    schema: CAPITAL_MARKETS_RAW
+    tables:
+      - name: raw_market_intel_rounds
+        description: Immutable landing records from external market intelligence providers.
+      - name: raw_crm_activity
+        description: Immutable landing records from CRM relationship and outreach activity extracts.
+
+models:
+  - name: stg_market_intel_rounds
+    description: Typed and standardized fundraising round records from external feeds.
+  - name: stg_crm_relationship_activity
+    description: Typed and standardized CRM activity records aligned to platform vocabulary.
+  - name: int_investor_entity_map
+    description: Investor canonicalization map generated from normalized names and source identifiers.
+  - name: int_investor_signal_rollup
+    description: Consolidated investor-level signal summaries for downstream marts.
+  - name: mart_investor_priority
+    description: Daily investor prioritization mart used by capital formation workflows.
+  - name: mart_fundraising_pipeline
+    description: Company- and round-level operating metrics for fundraising management.
+  - name: mart_relationship_intelligence
+    description: Investor relationship coverage and warm path dataset.

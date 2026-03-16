@@ -1,0 +1,4 @@
+investor_priority_date,canonical_investor_id,display_name,total_round_signals,latest_signal_date,signal_momentum_score,relationship_score,fit_score,relationship_status,coverage_gap_flag,priority_score
+2026-03-15,INV_000001,North Harbor Growth Partners,2,2026-03-13,0.9400,0.9100,0.9000,warm,false,0.9165
+2026-03-15,INV_000002,Catalyst Peak Capital,1,2026-03-12,0.8800,0.8600,0.9000,warm,false,0.8780
+2026-03-15,INV_000003,Summit Ridge Ventures,1,2026-03-11,0.6800,0.5400,0.6000,stale,false,0.5940

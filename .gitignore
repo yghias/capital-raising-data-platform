@@ -1,0 +1,17 @@
+.venv/
+.pycache/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+dist/
+build/
+*.pyc
+*.pyo
+*.log
+.env
+target/
+dbt_packages/
+logs/
+coverage.xml
+.coverage

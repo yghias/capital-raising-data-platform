@@ -1,0 +1,17 @@
+[
+  {
+    "source_system": "market_intel_api",
+    "entity_type": "fundraising_signal",
+    "source_record_id": "market-1",
+    "extracted_at": "2026-03-15T11:30:00Z",
+    "checksum": "b7a8f65b2e8d1234",
+    "payload": {
+      "company_name": "AtlasPay",
+      "investor_name": "North Harbor Growth Partners",
+      "round_type": "Series B",
+      "amount_usd": 45000000,
+      "sector": "Fintech",
+      "announcement_date": "2026-02-10"
+    }
+  }
+]

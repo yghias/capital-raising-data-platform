@@ -1,0 +1,10 @@
+This is a text placeholder for `schema.png` because a real PNG was not rendered in this environment.
+
+```mermaid
+erDiagram
+    DIM_INVESTOR ||--o{ FACT_OUTREACH_ACTIVITY : engages
+    DIM_COMPANY ||--o{ FACT_FUNDRAISING_EVENT : raises
+    DIM_INVESTOR ||--o{ FACT_FUNDRAISING_EVENT : participates
+    DIM_INVESTOR ||--o{ DIM_RELATIONSHIP : connects
+    DIM_PERSON ||--o{ DIM_RELATIONSHIP : participates
+```

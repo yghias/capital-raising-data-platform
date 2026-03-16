@@ -1,0 +1,32 @@
+[
+  {
+    "qualified_targets": 40,
+    "warm_intro_count": 10,
+    "signal_momentum": 0.73,
+    "meetings_booked": 9
+  },
+  {
+    "qualified_targets": 55,
+    "warm_intro_count": 15,
+    "signal_momentum": 0.81,
+    "meetings_booked": 13
+  },
+  {
+    "qualified_targets": 35,
+    "warm_intro_count": 8,
+    "signal_momentum": 0.62,
+    "meetings_booked": 7
+  },
+  {
+    "qualified_targets": 70,
+    "warm_intro_count": 22,
+    "signal_momentum": 0.9,
+    "meetings_booked": 17
+  },
+  {
+    "qualified_targets": 48,
+    "warm_intro_count": 12,
+    "signal_momentum": 0.76,
+    "meetings_booked": 10
+  }
+]

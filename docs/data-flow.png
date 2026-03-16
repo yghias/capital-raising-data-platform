@@ -1,0 +1,14 @@
+This is a text placeholder for `data-flow.png` because a real PNG was not rendered in this environment.
+
+```mermaid
+flowchart TD
+    A["CRM"] --> D["Airflow Ingestion"]
+    B["Market Intelligence"] --> D
+    C["Filings and News"] --> D
+    D --> E["Raw Storage"]
+    E --> F["Standardized Models"]
+    F --> G["Entity Resolution"]
+    G --> H["Snowflake / Databricks Marts"]
+    G --> I["Neo4j Graph"]
+    H --> J["BI and Executive Reporting"]
+```

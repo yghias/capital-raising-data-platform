@@ -1,0 +1,39 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Deployment target
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - qa
+          - prod
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build -t capital-raising-data-platform:${{ github.sha }} .
+
+      - name: Validate deployable assets
+        run: |
+          test -f src/orchestration/airflow_dag.py
+          test -f sql/schema.sql
+          test -f sql/marts.sql
+          test -f infrastructure/terraform/main.tf
+
+      - name: Deployment plan
+        run: |
+          echo "1. Publish container image for ingestion and utility jobs."
+          echo "2. Sync Airflow DAGs and platform configuration to the ${{ github.event.inputs.environment }} environment."
+          echo "3. Apply Snowflake DDL and run dbt staging/intermediate/mart models."
+          echo "4. Execute reconciliation.sql and tests.sql as post-deploy checks."

@@ -1,0 +1,55 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Compile Python modules
+        env:
+          PYTHONPYCACHEPREFIX: .pycache
+        run: |
+          python -m py_compile src/common/config.py src/common/logging.py src/common/models.py
+          python -m py_compile src/ingestion/api_clients.py src/ingestion/file_loader.py
+          python -m py_compile src/orchestration/helpers.py src/orchestration/airflow_dag.py
+          python -m py_compile src/transforms/canonicalize.py src/transforms/scoring.py src/transforms/spark_features.py
+          python -m py_compile src/ml/train_forecast.py
+
+      - name: Run local smoke workflows
+        env:
+          PYTHONPATH: .
+        run: |
+          python -m src.ingestion.api_clients
+          python -m src.transforms.scoring
+          python -m src.ml.train_forecast
+          pytest
+
+      - name: Validate SQL and dbt assets exist
+        run: |
+          test -f sql/schema.sql
+          test -f sql/marts.sql
+          test -f sql/tests.sql
+          test -f sql/reconciliation.sql
+          test -f sql/semantic_metrics.sql
+          test -f sql/canonicalization.sql
+          test -f dbt_project.yml
+          test -f models/intermediate/int_investor_entity_map.sql
+          test -f models/marts/mart_fundraising_pipeline.sql

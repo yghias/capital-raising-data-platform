@@ -1,0 +1,21 @@
+name: capital_raising_data_platform
+version: "1.0.0"
+config-version: 2
+
+profile: capital_raising_data_platform
+
+model-paths:
+  - models
+
+target-path: target
+clean-targets:
+  - target
+
+models:
+  capital_raising_data_platform:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: table
+    marts:
+      +materialized: table

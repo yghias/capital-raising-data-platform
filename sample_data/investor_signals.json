@@ -1,0 +1,38 @@
+[
+  {
+    "investor": "North Harbor Growth Partners",
+    "company_name": "AtlasPay",
+    "sector": "Fintech",
+    "preferred_round_type": "Series B",
+    "signal_strength": 0.94,
+    "source_system": "market_intel_api",
+    "signal_date": "2026-03-10"
+  },
+  {
+    "investor": "Summit Ridge Ventures",
+    "company_name": "GridForge",
+    "sector": "Industrial AI",
+    "preferred_round_type": "Series A",
+    "signal_strength": 0.68,
+    "source_system": "news_feed",
+    "signal_date": "2026-03-11"
+  },
+  {
+    "investor": "Catalyst Peak Capital",
+    "company_name": "LedgerSpring",
+    "sector": "Data Infrastructure",
+    "preferred_round_type": "Series A",
+    "signal_strength": 0.88,
+    "source_system": "crm_signal",
+    "signal_date": "2026-03-12"
+  },
+  {
+    "investor": "North Harbor GP",
+    "company_name": "CloudFoundryX",
+    "sector": "Enterprise Software",
+    "preferred_round_type": "Growth",
+    "signal_strength": 0.81,
+    "source_system": "market_intel_api",
+    "signal_date": "2026-03-13"
+  }
+]
