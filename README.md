@@ -25,17 +25,17 @@ The platform’s primary outputs are governed warehouse tables and marts that su
 - Operational transparency: lineage, quality checks, freshness, SLA ownership, and rollback procedures are documented alongside the code
 
 ## Repository map
-- [ARCHITECTURE.md](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/ARCHITECTURE.md): service boundaries, deployment model, and control plane
-- [DATA_MODEL.md](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/DATA_MODEL.md): conceptual, logical, and physical warehouse design
-- [PIPELINES.md](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/PIPELINES.md): ingestion and transformation workflow design
-- [DATA_CONTRACTS.md](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/DATA_CONTRACTS.md): source contracts and ingestion expectations
-- [SEMANTIC_LAYER.md](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/SEMANTIC_LAYER.md): business-facing metrics and semantic dataset definitions
-- [OPERATING_MODEL.md](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/OPERATING_MODEL.md): ownership model, SLAs, and service boundaries
-- [RUNBOOK.md](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/RUNBOOK.md): operator guidance and incident handling
-- [sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql): warehouse DDL, marts, semantic views, reconciliation, and test queries
-- [models](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/models): dbt-style staging, intermediate, and mart models
-- [src](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/src): ingestion, orchestration, utilities, and ML helpers
-- [infrastructure](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/infrastructure): Snowflake, Airflow, and object storage deployment notes
+- [ARCHITECTURE.md](ARCHITECTURE.md): service boundaries, deployment model, and control plane
+- [DATA_MODEL.md](DATA_MODEL.md): conceptual, logical, and physical warehouse design
+- [PIPELINES.md](PIPELINES.md): ingestion and transformation workflow design
+- [DATA_CONTRACTS.md](DATA_CONTRACTS.md): source contracts and ingestion expectations
+- [SEMANTIC_LAYER.md](SEMANTIC_LAYER.md): business-facing metrics and semantic dataset definitions
+- [OPERATING_MODEL.md](OPERATING_MODEL.md): ownership model, SLAs, and service boundaries
+- [RUNBOOK.md](RUNBOOK.md): operator guidance and incident handling
+- [sql](sql): warehouse DDL, marts, semantic views, reconciliation, and test queries
+- [models](models): dbt-style staging, intermediate, and mart models
+- [src](src): ingestion, orchestration, utilities, and ML helpers
+- [infrastructure](infrastructure): Snowflake, Airflow, and object storage deployment notes
 
 ## Data flow
 ```mermaid
@@ -106,7 +106,7 @@ flowchart LR
 
 ## Local workflow
 ```bash
-cd /Users/yasserghias/Documents/Playground/capital-raising-data-platform
+cd capital-raising-data-platform
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -118,10 +118,10 @@ pytest
 ```
 
 ## Warehouse execution order
-1. Apply [sql/schema.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/schema.sql)
-2. Materialize dbt-style models under [models](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/models)
-3. Apply semantic and reporting SQL under [sql/marts.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/marts.sql) and [sql/semantic_metrics.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/semantic_metrics.sql)
-4. Run [sql/tests.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/tests.sql), [sql/reconciliation.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/reconciliation.sql), and [sql/monitoring.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/monitoring.sql)
+1. Apply [sql/schema.sql](sql/schema.sql)
+2. Materialize dbt-style models under [models](models)
+3. Apply semantic and reporting SQL under [sql/marts.sql](sql/marts.sql) and [sql/semantic_metrics.sql](sql/semantic_metrics.sql)
+4. Run [sql/tests.sql](sql/tests.sql), [sql/reconciliation.sql](sql/reconciliation.sql), and [sql/monitoring.sql](sql/monitoring.sql)
 
 ## Diagram assets
 The `docs/*.png` assets are text-based diagram placeholders that embed Mermaid source. They keep the repository self-contained in environments where image rendering is not available.

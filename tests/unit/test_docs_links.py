@@ -26,4 +26,6 @@ def test_repo_markdown_links_point_to_existing_files() -> None:
         for target in MARKDOWN_LINK.findall(content):
             if target.startswith("http://") or target.startswith("https://"):
                 continue
+            assert not target.startswith("/"), f"Absolute path link in {doc}: {target}"
+            assert "/Users/" not in target, f"Filesystem path link in {doc}: {target}"
             assert Path(target).exists(), f"Broken link in {doc}: {target}"

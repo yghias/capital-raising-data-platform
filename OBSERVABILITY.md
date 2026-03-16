@@ -35,7 +35,7 @@ The platform treats observability as a product capability, not an afterthought. 
 - Great Expectations or SQL assertions
 - OpenLineage or metadata platform integration
 - Grafana, Datadog, or Prometheus-based dashboards
-- monitoring queries in [sql/monitoring.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/monitoring.sql)
+- monitoring queries in [sql/monitoring.sql](sql/monitoring.sql)
 
 ## Operational dashboards
 - ingestion pipeline status
@@ -56,5 +56,5 @@ The platform treats observability as a product capability, not an afterthought. 
 - owner and escalation path
 
 ## Repository implementation notes
-- monitoring SQL lives in [sql/monitoring.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/monitoring.sql)
-- orchestration validation is implemented in [src/orchestration/sql_tasks.py](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/src/orchestration/sql_tasks.py)
+- monitoring SQL lives in [sql/monitoring.sql](sql/monitoring.sql)
+- orchestration validation is implemented in [src/orchestration/sql_tasks.py](src/orchestration/sql_tasks.py)

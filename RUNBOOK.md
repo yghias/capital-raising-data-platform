@@ -58,5 +58,5 @@ Operator actions:
 - preserve source evidence for every corrective action
 
 ## Backfill implementation notes
-- local backfill helper: [src/orchestration/backfill.py](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/src/orchestration/backfill.py)
-- reconciliation queries after backfill: [sql/reconciliation.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/reconciliation.sql)
+- local backfill helper: [src/orchestration/backfill.py](src/orchestration/backfill.py)
+- reconciliation queries after backfill: [sql/reconciliation.sql](sql/reconciliation.sql)
