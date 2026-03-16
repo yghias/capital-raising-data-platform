@@ -20,7 +20,8 @@ Symptoms:
 Operator actions:
 1. confirm whether the failure is authentication, rate limit, or upstream outage
 2. review last successful watermark and impacted downstream datasets
-3. rerun the source task after remediation
+3. rerun the source task after remediation through Airflow or via the relevant local entry point:
+   `python -m src.ingestion.api_clients` or `python -m src.ingestion.crm_client`
 4. if source remains unavailable, publish a degraded-service notice and suppress dependent alerts
 
 ### Entity resolution confidence collapse
@@ -55,3 +56,7 @@ Operator actions:
 - replay from raw where possible
 - avoid manual edits in canonical tables without audit trail
 - preserve source evidence for every corrective action
+
+## Backfill implementation notes
+- local backfill helper: [src/orchestration/backfill.py](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/src/orchestration/backfill.py)
+- reconciliation queries after backfill: [sql/reconciliation.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/reconciliation.sql)

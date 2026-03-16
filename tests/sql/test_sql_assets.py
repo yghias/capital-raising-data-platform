@@ -9,6 +9,7 @@ def test_expected_sql_files_exist() -> None:
         Path("sql/semantic_metrics.sql"),
         Path("sql/reconciliation.sql"),
         Path("sql/canonicalization.sql"),
+        Path("sql/monitoring.sql"),
     ]
     for path in expected:
         assert path.exists(), f"Missing SQL asset: {path}"

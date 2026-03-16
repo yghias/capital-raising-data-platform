@@ -8,6 +8,7 @@ SQL_DEPLOYMENT_ASSETS = [
     Path("sql/canonicalization.sql"),
     Path("sql/marts.sql"),
     Path("sql/semantic_metrics.sql"),
+    Path("sql/monitoring.sql"),
     Path("sql/tests.sql"),
     Path("sql/reconciliation.sql"),
 ]

@@ -89,3 +89,8 @@ Airflow manages dependency graphs, retries, SLAs, backfills, and task ownership.
 - `publish_relationship_graph`
 - `build_analytics_marts`
 - `run_quality_and_alerting`
+
+## Repository implementation notes
+- [src/ingestion/api_clients.py](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/src/ingestion/api_clients.py) lands sample market-intelligence payloads into `sample_data/raw_extracts`
+- [src/ingestion/crm_client.py](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/src/ingestion/crm_client.py) lands CRM activity extracts for local workflow validation
+- [src/orchestration/airflow_dag.py](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/src/orchestration/airflow_dag.py) wires ingestion, SQL asset validation, monitoring query checks, and forecasting tasks

@@ -28,8 +28,9 @@ jobs:
           PYTHONPYCACHEPREFIX: .pycache
         run: |
           python -m py_compile src/common/config.py src/common/logging.py src/common/models.py
-          python -m py_compile src/ingestion/api_clients.py src/ingestion/file_loader.py
+          python -m py_compile src/ingestion/api_clients.py src/ingestion/contracts.py src/ingestion/crm_client.py src/ingestion/file_loader.py
           python -m py_compile src/orchestration/helpers.py src/orchestration/airflow_dag.py
+          python -m py_compile src/orchestration/sql_tasks.py src/orchestration/backfill.py
           python -m py_compile src/transforms/canonicalize.py src/transforms/scoring.py src/transforms/spark_features.py
           python -m py_compile src/ml/train_forecast.py
 
@@ -38,6 +39,7 @@ jobs:
           PYTHONPATH: .
         run: |
           python -m src.ingestion.api_clients
+          python -m src.ingestion.crm_client
           python -m src.transforms.scoring
           python -m src.ml.train_forecast
           pytest
@@ -49,6 +51,7 @@ jobs:
           test -f sql/tests.sql
           test -f sql/reconciliation.sql
           test -f sql/semantic_metrics.sql
+          test -f sql/monitoring.sql
           test -f sql/canonicalization.sql
           test -f dbt_project.yml
           test -f models/intermediate/int_investor_entity_map.sql

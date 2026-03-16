@@ -6,6 +6,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 
 from src.ingestion.api_clients import main as ingest_market_intel
+from src.ingestion.crm_client import main as ingest_crm_activity
 from src.ml.train_forecast import main as run_forecast_training
 from src.orchestration.helpers import DEFAULT_ARGS
 from src.orchestration.sql_tasks import print_deployment_order, validate_sql_assets
@@ -25,6 +26,11 @@ with DAG(
         python_callable=ingest_market_intel,
     )
 
+    extract_crm_activity = PythonOperator(
+        task_id="extract_crm_activity",
+        python_callable=ingest_crm_activity,
+    )
+
     validate_warehouse_sql = PythonOperator(
         task_id="validate_warehouse_sql",
         python_callable=validate_sql_assets,
@@ -40,4 +46,4 @@ with DAG(
         python_callable=run_forecast_training,
     )
 
-    extract_market_data >> validate_warehouse_sql >> log_deployment_order >> train_forecast_model
+    [extract_market_data, extract_crm_activity] >> validate_warehouse_sql >> log_deployment_order >> train_forecast_model

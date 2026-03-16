@@ -1,4 +1,4 @@
-This is a text placeholder for `schema.png` because a real PNG was not rendered in this environment.
+Diagram source for `schema.png`. This repository stores Mermaid text here so the model remains reviewable without a binary image renderer.
 
 ```mermaid
 erDiagram

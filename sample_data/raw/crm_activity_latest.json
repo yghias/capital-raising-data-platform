@@ -1,0 +1,19 @@
+[
+  {
+    "source_system": "crm_salesforce",
+    "entity_type": "crm_activity",
+    "source_record_id": "crm-1",
+    "extracted_at": "2026-03-15T11:30:00Z",
+    "checksum": "d17fa124aa99bc12",
+    "payload": {
+      "crm_account_id": "SF-ACCT-2942",
+      "investor_name": "North Harbor Growth Partners",
+      "relationship_owner": "Alyssa Cole",
+      "activity_type": "meeting",
+      "activity_date": "2026-02-24",
+      "outcome": "meeting_booked",
+      "warm_intro_path": "Advisor -> Existing LP -> Partner",
+      "relationship_strength": 0.91
+    }
+  }
+]

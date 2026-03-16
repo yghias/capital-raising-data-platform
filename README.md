@@ -112,6 +112,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 export PYTHONPATH=.
 python -m src.ingestion.api_clients
+python -m src.ingestion.crm_client
 python -m src.ml.train_forecast
 pytest
 ```
@@ -120,7 +121,7 @@ pytest
 1. Apply [sql/schema.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/schema.sql)
 2. Materialize dbt-style models under [models](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/models)
 3. Apply semantic and reporting SQL under [sql/marts.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/marts.sql) and [sql/semantic_metrics.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/semantic_metrics.sql)
-4. Run [sql/tests.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/tests.sql) and [sql/reconciliation.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/reconciliation.sql)
+4. Run [sql/tests.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/tests.sql), [sql/reconciliation.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/reconciliation.sql), and [sql/monitoring.sql](/Users/yasserghias/Documents/Playground/capital-raising-data-platform/sql/monitoring.sql)
 
 ## Diagram assets
 The `docs/*.png` assets are text-based diagram placeholders that embed Mermaid source. They keep the repository self-contained in environments where image rendering is not available.

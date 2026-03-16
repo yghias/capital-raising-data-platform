@@ -1,6 +1,4 @@
-This is a text placeholder for `overview.png` because a real PNG was not rendered in this environment.
-
-Use the Mermaid source below to generate an image in a future pass if needed.
+Diagram source for `overview.png`. This repository stores Mermaid text here so the architecture remains reviewable without a binary image renderer.
 
 ```mermaid
 flowchart LR
